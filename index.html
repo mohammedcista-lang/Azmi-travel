@@ -24,6 +24,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -117,8 +118,8 @@
 
         /* Hero Section */
         .hero {
-            min-height: 75vh;
-            background: linear-gradient(135deg, rgba(27, 59, 111, 0.92), rgba(44, 101, 188, 0.85)), url('Azmi.jpg') center/cover no-repeat;[span_1](start_span)[span_1](end_span)
+            min-height: 80vh;
+            background: linear-gradient(135deg, rgba(27, 59, 111, 0.92), rgba(44, 101, 188, 0.85)), url('Azmi.jpg') center/cover no-repeat;[span_0](start_span)[span_0](end_span)
             display: flex;
             align-items: center;
             justify-content: center;
@@ -132,21 +133,22 @@
         }
 
         .hero-content h2 {
-            font-size: 2.6rem;
+            font-size: 2.7rem;
             font-weight: 900;
             margin-bottom: 20px;
             text-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .hero-content p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             margin-bottom: 30px;
             font-weight: 300;
             background: rgba(255, 255, 255, 0.12);
-            padding: 15px 25px;
+            padding: 18px 25px;
             border-radius: 12px;
             backdrop-filter: blur(8px);
             border: 1px solid rgba(255,255,255,0.2);
+            line-height: 1.8;
         }
 
         .btn-main {
@@ -205,7 +207,7 @@
             gap: 10px;
         }
 
-        /* Feature 1: Advanced Booking Engine */
+        /* Advanced Search Engine */
         .search-engine-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) 130px;
@@ -215,7 +217,6 @@
             padding: 20px;
             border-radius: 12px;
             border: 1px solid #e2e8f0;
-            margin-bottom: 30px;
         }
 
         .search-field label {
@@ -237,7 +238,7 @@
             background: var(--white);
         }
 
-        /* Feature 2: Flight Timetable Table */
+        /* Flight Timetable Table */
         .flight-table-wrapper {
             overflow-x: auto;
         }
@@ -289,7 +290,7 @@
             background: var(--dark-blue);
         }
 
-        /* Feature 3: Destinations Showcase */
+        /* Destinations Showcase */
         .destinations-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -338,6 +339,38 @@
             font-size: 0.85rem;
             opacity: 0.9;
             margin-bottom: 12px;
+        }
+
+        /* Baggage & Services Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .info-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .info-box i {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+        }
+
+        .info-box h4 {
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .info-box p {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
 
         /* Location Section */
@@ -485,7 +518,7 @@
     <header>
         <div class="navbar">
             <div class="logo-container">
-                <img src="Azmi.jpg" alt="شعار وكالة عزمي">[span_2](start_span)[span_2](end_span)
+                <img src="Azmi.jpg" alt="شعار وكالة عزمي">[span_1](start_span)[span_1](end_span)
                 <div class="logo-text">
                     <h1>وكالة عزمي</h1>
                     <span>AZMI TRAVEL & TOURISM</span>
@@ -497,6 +530,7 @@
                     <li><a href="#search-engine">محرك البحث</a></li>
                     <li><a href="#timetable">جدول الرحلات</a></li>
                     <li><a href="#destinations">الوجهات</a></li>
+                    <li><a href="#baggage">سياسة الأمتعة</a></li>
                     <li><a href="#location">موقعنا</a></li>
                     <li><button class="admin-btn" onclick="openAdminLogin()"><i class="fa-solid fa-lock"></i> لوحة المدير</button></li>
                 </ul>
@@ -553,10 +587,10 @@
             </div>
         </section>
 
-        <!-- 2. Flight Timetable (Seasonal & Annual Schedule) -->
+        <!-- 2. Flight Timetable (Seasonal & Annual Schedule for Sudan) -->
         <section id="timetable" class="card-box">
             <div class="section-header">
-                <h3><i class="fa-solid fa-calendar-days" style="color: var(--primary-blue);"></i> جدول مواعيد الرحلات الموسمية والسنوية (السودان)</h3>
+                <h3><i class="fa-solid fa-calendar-days" style="color: var(--primary-blue);"></i> جدول مواعيد الرحلات الموسمية والسنوية (السودان - داخلة وخارجة)</h3>
                 <span style="font-size: 0.85rem; color: #059669; background: #ecfdf5; padding: 5px 12px; border-radius: 20px; font-weight: 600;">
                     <i class="fa-solid fa-circle-dot"></i> تسعير عالمي مباشر
                 </span>
@@ -610,6 +644,30 @@
                     <h4>الرياض</h4>
                     <p>خطوط طيران مباشرة تخدم قطاع الأعمال والمغتربين.</p>
                     <button class="book-btn" onclick="openBookingModal('بورتسودان ⟵ الرياض', 'الجدول الموسمي')">احجز الآن</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Baggage Policy & Payment Methods -->
+        <section id="baggage" class="card-box">
+            <div class="section-header">
+                <h3><i class="fa-solid fa-suitcase-rolling" style="color: var(--primary-blue);"></i> سياسة الأمتعة وشروط التذاكر وطرق الدفع</h3>
+            </div>
+            <div class="info-grid">
+                <div class="info-box">
+                    <i class="fa-solid fa-suitcase"></i>
+                    <h4>سياسة الأمتعة والحقائب</h4>
+                    <p>الوزن المسموح للحقائب المشحونة يتراوح بين 23 كجم إلى 30 كجم حسب الوجهة، بالإضافة إلى حقيبة يد مقصورة بمقاس 7 كجم مجاناً.</p>
+                </div>
+                <div class="info-box">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <h4>شروط التعديل والإلغاء</h4>
+                    <p>تتيح وكالة عزمي إمكانية تعديل أو إلغاء الحجوزات وفقاً لشروط درجة التذكرة المحجوزة، مع توفير دعم فوري لإعادة جدولة المواعيد.</p>
+                </div>
+                <div class="info-box">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <h4>طرق الدفع المعتمدة</h4>
+                    <p>يمكنكم تسديد قيمة التذاكر عبر التحويل البنكي المباشر (تطبيق بنكك - Bankak)، أو الدفع النقدي مباشرة في المقر الرئيسي للوكالة.</p>
                 </div>
             </div>
         </section>
@@ -720,7 +778,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 <span>وكالة عزمي للسفر والسياحة (Azmi Travel & Tourism)</span>[span_3](start_span)[span_3](end_span)</p>
+        <p>جميع الحقوق محفوظة &copy; 2026 <span>وكالة عزمي للسفر والسياحة (Azmi Travel & Tourism)</span>[span_2](start_span)[span_2](end_span)</p>
     </footer>
 
     <!-- JavaScript System Logic -->
