@@ -59,8 +59,8 @@
         }
 
         .logo-container img {
-            width: 55px;
-            height: 55px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--primary-blue);
@@ -68,13 +68,14 @@
         }
 
         .logo-text h1 {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--dark-blue);
             font-weight: 900;
+            line-height: 1.2;
         }
 
         .logo-text span {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--primary-blue);
             letter-spacing: 1px;
         }
@@ -116,7 +117,7 @@
 
         /* Hero Section */
         .hero {
-            min-height: 80vh;
+            min-height: 75vh;
             background: linear-gradient(135deg, rgba(27, 59, 111, 0.92), rgba(44, 101, 188, 0.85)), url('Azmi.jpg') center/cover no-repeat;[span_1](start_span)[span_1](end_span)
             display: flex;
             align-items: center;
@@ -131,14 +132,14 @@
         }
 
         .hero-content h2 {
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             font-weight: 900;
             margin-bottom: 20px;
             text-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .hero-content p {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             margin-bottom: 30px;
             font-weight: 300;
             background: rgba(255, 255, 255, 0.12);
@@ -197,26 +198,27 @@
         }
 
         .section-header h3 {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             color: var(--dark-blue);
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        /* Advanced Search Filter Bar */
-        .filter-bar {
+        /* Feature 1: Advanced Booking Engine */
+        .search-engine-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) 130px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) 130px;
             gap: 15px;
             align-items: end;
-            background: #f1f5f9;
+            background: #f8fafc;
             padding: 20px;
             border-radius: 12px;
-            margin-bottom: 25px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 30px;
         }
 
-        .filter-group label {
+        .search-field label {
             display: block;
             margin-bottom: 6px;
             font-weight: 600;
@@ -224,7 +226,7 @@
             color: var(--dark-blue);
         }
 
-        .filter-group select {
+        .search-field select, .search-field input {
             width: 100%;
             padding: 10px 12px;
             border: 1px solid #cbd5e1;
@@ -235,7 +237,7 @@
             background: var(--white);
         }
 
-        /* Flight Table */
+        /* Feature 2: Flight Timetable Table */
         .flight-table-wrapper {
             overflow-x: auto;
         }
@@ -272,7 +274,7 @@
             font-weight: 700;
         }
 
-        .book-now-btn {
+        .book-btn {
             background: var(--primary-blue);
             color: var(--white);
             border: none;
@@ -283,8 +285,59 @@
             transition: var(--transition);
         }
 
-        .book-now-btn:hover {
+        .book-btn:hover {
             background: var(--dark-blue);
+        }
+
+        /* Feature 3: Destinations Showcase */
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 20px;
+        }
+
+        .destination-card {
+            height: 260px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            color: var(--white);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .destination-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to top, rgba(27,59,111,0.95), rgba(27,59,111,0.2));
+            z-index: 1;
+        }
+
+        .destination-card > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(44, 101, 188, 0.3);
+        }
+
+        .destination-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            font-weight: 800;
+        }
+
+        .destination-card p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-bottom: 12px;
         }
 
         /* Location Section */
@@ -441,7 +494,9 @@
             <nav>
                 <ul>
                     <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#flights-system">نظام الحجوزات والرحلات</a></li>
+                    <li><a href="#search-engine">محرك البحث</a></li>
+                    <li><a href="#timetable">جدول الرحلات</a></li>
+                    <li><a href="#destinations">الوجهات</a></li>
                     <li><a href="#location">موقعنا</a></li>
                     <li><button class="admin-btn" onclick="openAdminLogin()"><i class="fa-solid fa-lock"></i> لوحة المدير</button></li>
                 </ul>
@@ -452,77 +507,117 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h2>وكالة عزمي للسفر والسياحة</h2>
-            <p>وجهة موثوقة تقدم خدمات حجز الطيران والسياحة والحج والعمرة مع خدمة عملاء متاحة على مدار الساعة.</p>
-            <button class="btn-main" onclick="openBookingModal('رحلة عامة من نظام السودان', 'حسب جدول الرحلات', '')">حجز تذكرة فورية</button>
+            <h2>بوابتك نحو العالم بثقة واحترافية</h2>
+            <p>وكالة عزمي وجهة موثوقة تقدم خدمات حجز الطيران والسياحة والحج والعمرة مع خدمة عملاء متاحة على مدار الساعة.</p>
+            <button class="btn-main" onclick="openBookingModal('رحلة دولية عامة', 'جدول رحلات السودان')">احجز تذكرتك الفورية</button>
         </div>
     </section>
 
     <!-- Main Container -->
     <div class="container">
 
-        <!-- Precise Sudan Flight & Booking System Section -->
-        <section id="flights-system" class="card-box">
+        <!-- 1. Advanced Interactive Booking Engine -->
+        <section id="search-engine" class="card-box">
             <div class="section-header">
-                <h3><i class="fa-solid fa-plane" style="color: var(--primary-blue);"></i> نظام رحلات وحجوزات السودان (الداخلة والخارجة)</h3>
-                <span style="font-size: 0.85rem; color: #059669; background: #ecfdf5; padding: 5px 12px; border-radius: 20px; font-weight: 600;">
-                    <i class="fa-solid fa-circle-dot"></i> تحديث حي متصل
-                </span>
+                <h3><i class="fa-solid fa-magnifying-glass-location" style="color: var(--primary-blue);"></i> محرك البحث والحجز التفاعلي المتقدم</h3>
             </div>
-
-            <!-- Filter Bar -->
-            <div class="filter-bar">
-                <div class="filter-group">
-                    <label>نوع الاتجاه:</label>
-                    <select id="filterDirection" onchange="filterSudanFlights()">
-                        <option value="all">جميع الرحلات (داخلة وخارجة)</option>
-                        <option value="outgoing">الرحلات المغادرة من السودان (خارجة)</option>
-                        <option value="incoming">الرحلات القادمة إلى السودان (داخلة)</option>
+            <div class="search-engine-grid">
+                <div class="search-field">
+                    <label>اتجاه الرحلة:</label>
+                    <select id="engineDirection">
+                        <option value="outgoing">مغادرة من السودان (خارجة)</option>
+                        <option value="incoming">قادمة إلى السودان (داخلة)</option>
                     </select>
                 </div>
-                <div class="filter-group">
-                    <label>الوجهة / المحطة:</label>
-                    <select id="filterDestination" onchange="filterSudanFlights()">
-                        <option value="">جميع الوجهات</option>
-                        <option value="دبي">دبي</option>
+                <div class="search-field">
+                    <label>الوجهة الرئيسية:</label>
+                    <select id="engineDestination">
                         <option value="القاهرة">القاهرة</option>
+                        <option value="دبي">دبي</option>
                         <option value="جدة">جدة</option>
                         <option value="إسطنبول">إسطنبول</option>
                         <option value="الرياض">الرياض</option>
                         <option value="الدوحة">الدوحة</option>
-                        <option value="أديس أبابا">أديس أبابا</option>
+                    </select>
+                </div>
+                <div class="search-field">
+                    <label>نوع التذكرة:</label>
+                    <select id="engineType">
+                        <option value="ذهاب وعودة">ذهاب وعودة</option>
+                        <option value="ذهاب فقط">ذهاب فقط</option>
                     </select>
                 </div>
                 <div>
-                    <button class="btn-main" style="width: 100%; padding: 10px; font-size: 0.9rem;" onclick="resetFilter()">إعادة ضبط</button>
+                    <button class="btn-main" style="width: 100%; padding: 10px; font-size: 0.9rem;" onclick="runAdvancedSearch()">بحث رحلات</button>
                 </div>
             </div>
+        </section>
 
-            <!-- Flight Table -->
+        <!-- 2. Flight Timetable (Seasonal & Annual Schedule) -->
+        <section id="timetable" class="card-box">
+            <div class="section-header">
+                <h3><i class="fa-solid fa-calendar-days" style="color: var(--primary-blue);"></i> جدول مواعيد الرحلات الموسمية والسنوية (السودان)</h3>
+                <span style="font-size: 0.85rem; color: #059669; background: #ecfdf5; padding: 5px 12px; border-radius: 20px; font-weight: 600;">
+                    <i class="fa-solid fa-circle-dot"></i> تسعير عالمي مباشر
+                </span>
+            </div>
             <div class="flight-table-wrapper">
                 <table class="flight-table">
                     <thead>
                         <tr>
                             <th>رقم الرحلة</th>
-                            <th>نوع الرحلة</th>
-                            <th>خط السير (من ⟵ إلى)</th>
-                            <th>الموعد والجدول الزمني</th>
-                            <th>الحالة</th>
-                            <th>السعر الحالي</th>
-                            <th>إجراء الحجز الدقيق</th>
+                            <th>الخط التجاري (المسار)</th>
+                            <th>المواعيد الموسمية / السنوية</th>
+                            <th>حالة الرحلة</th>
+                            <th>السعر المعمد</th>
+                            <th>حجز دقيق</th>
                         </tr>
                     </thead>
-                    <tbody id="sudan-flights-tbody">
+                    <tbody id="timetable-tbody">
                         <!-- تتحدث ديناميكياً -->
                     </tbody>
                 </table>
             </div>
         </section>
 
+        <!-- 3. Destinations Showcase -->
+        <section id="destinations" class="card-box">
+            <div class="section-header">
+                <h3><i class="fa-solid fa-earth-americas" style="color: var(--primary-blue);"></i> الوجهات العالمية والمحلية</h3>
+            </div>
+            <div class="destinations-grid">
+                <div class="destination-card" style="background: url('https://images.unsplash.com/photo-1541427422271-2b5df0104e76?auto=format&fit=crop&w=500&q=80') center/cover;">
+                    <h4>القاهرة</h4>
+                    <p>رحلات يومية منتظمة للسياحة والعلاج والأعمال.</p>
+                    <button class="book-btn" onclick="openBookingModal('بورتسودان ⟵ القاهرة', 'الجدول الموسمي')">احجز الآن</button>
+                </div>
+                <div class="destination-card" style="background: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=500&q=80') center/cover;">
+                    <h4>دبي</h4>
+                    <p>أرقى الوجهات التجارية والسياحية برحلات مؤكدة.</p>
+                    <button class="book-btn" onclick="openBookingModal('بورتسودان ⟵ دبي', 'الجدول الموسمي')">احجز الآن</button>
+                </div>
+                <div class="destination-card" style="background: url('https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=500&q=80') center/cover;">
+                    <h4>جدة</h4>
+                    <p>خدمات متكاملة للعمرة ورحلات التواصل المستمر.</p>
+                    <button class="book-btn" onclick="openBookingModal('بورتسودان ⟵ جدة', 'الجدول الموسمي')">احجز الآن</button>
+                </div>
+                <div class="destination-card" style="background: url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=500&q=80') center/cover;">
+                    <h4>إسطنبول</h4>
+                    <p>باقات سياحية استثنائية ورحلات أسبوعية منتظمة.</p>
+                    <button class="book-btn" onclick="openBookingModal('بورتسودان ⟵ إسطنبول', 'الجدول الموسمي')">احجز الآن</button>
+                </div>
+                <div class="destination-card" style="background: url('https://images.unsplash.com/photo-1586724237569-f3d0c11d1e52?auto=format&fit=crop&w=500&q=80') center/cover;">
+                    <h4>الرياض</h4>
+                    <p>خطوط طيران مباشرة تخدم قطاع الأعمال والمغتربين.</p>
+                    <button class="book-btn" onclick="openBookingModal('بورتسودان ⟵ الرياض', 'الجدول الموسمي')">احجز الآن</button>
+                </div>
+            </div>
+        </section>
+
         <!-- Location Section -->
         <section id="location" class="location-box">
             <h3>موقع الوكالة الرئيسي</h3>
-            <p>يسعدنا زيارتكم لمقرنا لتقديم أفضل الاستشارات وخدمات السفر.</p>
+            <p>يسعدنا زيارتكم لمقرنا الرئيسي لتقديم أفضل خدمات السفر والاستشارات.</p>
             <div class="location-address">
                 <i class="fa-solid fa-location-dot"></i>
                 <span>الخرطوم _ غرب صينية القندول</span>
@@ -532,7 +627,7 @@
     </div>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/249125561790?text=مرحباً%20وكالة%20عزمي،%20أريد%20الاستفسار%20عن%20نظام%20الحجوزات" class="whatsapp-float" target="_blank" title="تواصل عبر الواتساب">
+    <a href="https://wa.me/249125561790?text=مرحباً%20وكالة%20عزمي،%20أريد%20الاستفسار%20عن%20الرحلات" class="whatsapp-float" target="_blank" title="تواصل عبر الواتساب">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -543,11 +638,11 @@
             <h3 style="color: var(--dark-blue); margin-bottom: 20px;"><i class="fa-solid fa-ticket"></i> نظام الحجز الدقيق - وكالة عزمي</h3>
             <form id="bookingForm" onsubmit="sendPreciseBookingToWhatsApp(event)">
                 <div class="form-group">
-                    <label>الرحلة المختارة (خط السير):</label>
+                    <label>خط السير المعمد:</label>
                     <input type="text" id="bRoute" required readonly style="background: #f1f5f9; font-weight: bold;">
                 </div>
                 <div class="form-group">
-                    <label>اختر اليوم:</label>
+                    <label>يوم السفر:</label>
                     <select id="bDay" required>
                         <option value="">اختر اليوم</option>
                         <script>
@@ -556,7 +651,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>اختر الشهر:</label>
+                    <label>شهر السفر:</label>
                     <select id="bMonth" required>
                         <option value="">اختر الشهر</option>
                         <option value="يناير">يناير</option>
@@ -577,24 +672,24 @@
                     <label>عدد الأفراد:</label>
                     <div class="passengers-grid">
                         <div>
-                            <label style="font-size:0.8rem">رجل</label>
+                            <label style="font-size:0.8rem">رجال</label>
                             <input type="number" id="pMen" min="0" value="1">
                         </div>
                         <div>
-                            <label style="font-size:0.8rem">امرأة</label>
+                            <label style="font-size:0.8rem">نساء</label>
                             <input type="number" id="pWomen" min="0" value="0">
                         </div>
                         <div>
-                            <label style="font-size:0.8rem">طفل</label>
+                            <label style="font-size:0.8rem">أطفال</label>
                             <input type="number" id="pChildren" min="0" value="0">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>رقم الجواز (للمسافرين):</label>
-                    <input type="text" id="bPassport" required placeholder="أدخل أرقام جوازات السفر بدقة">
+                    <label>رقم الجواز (أو أرقام الجوازات):</label>
+                    <input type="text" id="bPassport" required placeholder="أدخل أرقام الجوازات بدقة">
                 </div>
-                <button type="submit" class="btn-main" style="width: 100%; margin-top: 10px; background: #25d366; color: white;">إرسال تفاصيل الحجز الدقيق عبر واتساب</button>
+                <button type="submit" class="btn-main" style="width: 100%; margin-top: 10px; background: #25d366; color: white;">إرسال تفاصيل الحجز عبر واتساب</button>
             </form>
         </div>
     </div>
@@ -617,7 +712,7 @@
         <div class="modal-content">
             <button class="close-modal" onclick="closeAdminDashboard()">&times;</button>
             <h3 style="color: var(--dark-blue); margin-bottom: 15px;"><i class="fa-solid fa-gears"></i> لوحة التحكم اليدوية للأسعار والرحلات</h3>
-            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 20px;">قم بتحديث الأسعار والحالات وحفظها لتظهر حصرياً للعملاء.</p>
+            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 20px;">قم بتعديل الأسعار أو الحالات لتظهر حصرياً للعملاء.</p>
             <div id="adminFlightsEditor"></div>
             <button class="btn-main" style="width: 100%; margin-top: 15px; background: #059669;" onclick="saveAdminChanges()">حفظ التحديثات ونشرها</button>
         </div>
@@ -630,74 +725,66 @@
 
     <!-- JavaScript System Logic -->
     <script>
-        // قاعدة بيانات شاملة ودقيقة لرحلات السودان الداخلة والخارجة
-        let defaultSudanFlights = [
-            { id: 1, code: 'SD-101', type: 'outgoing', typeText: 'خارجة (مغادرة)', route: 'بورتسودان ⟵ دبي', time: 'يومياً - 08:00 صباحاً', status: 'مؤكدة', price: '450,000 SDG' },
-            { id: 2, code: 'SD-102', type: 'incoming', typeText: 'داخلة (قادمة)', route: 'دبي ⟵ بورتسودان', time: 'يومياً - 02:00 ظهراً', status: 'في الموعد', price: '440,000 SDG' },
-            { id: 3, code: 'SD-201', type: 'outgoing', typeText: 'خارجة (مغادرة)', route: 'بورتسودان ⟵ القاهرة', time: 'يومياً - 10:30 صباحاً', status: 'مؤكدة', price: '380,000 SDG' },
-            { id: 4, code: 'SD-202', type: 'incoming', typeText: 'داخلة (قادمة)', route: 'القاهرة ⟵ بورتسودان', time: 'يومياً - 06:00 مساءً', status: 'مؤكدة', price: '370,000 SDG' },
-            { id: 5, code: 'SD-301', type: 'outgoing', typeText: 'خارجة (مغادرة)', route: 'بورتسودان ⟵ جدة', time: 'رحلات منتظمة - 04:00 عصراً', status: 'متاحة للحجز', price: '310,000 SDG' },
-            { id: 6, code: 'SD-302', type: 'incoming', typeText: 'داخلة (قادمة)', route: 'جدة ⟵ بورتسودان', time: 'رحلات منتظمة - 09:00 صباحاً', status: 'مؤكدة', price: '300,000 SDG' },
-            { id: 7, code: 'SD-401', type: 'outgoing', typeText: 'خارجة (مغادرة)', route: 'بورتسودان ⟵ إسطنبول', time: 'الأربعاء والسبت', status: 'مؤكدة', price: '520,000 SDG' },
-            { id: 8, code: 'SD-501', type: 'outgoing', typeText: 'خارجة (مغادرة)', route: 'بورتسودان ⟵ الرياض', time: 'الإثنين والخميس', status: 'مؤكدة', price: '390,000 SDG' },
-            { id: 9, code: 'SD-601', type: 'incoming', typeText: 'داخلة (قادمة)', route: 'الدوحة ⟵ بورتسودان', time: 'الثلاثاء والجمعة', status: 'مؤكدة', price: '460,000 SDG' },
-            { id: 10, code: 'SD-701', type: 'outgoing', typeText: 'خارجة (مغادرة)', route: 'بورتسودان ⟵ أديس أبابا', time: 'الأحد والأربعاء', status: 'متاحة للحجز', price: '350,000 SDG' }
+        // جدول الرحلات والأسعار والجدول الموسمي والسنوي لحركة السفر في السودان
+        let defaultTimetable = [
+            { id: 1, code: 'AZ-101', route: 'بورتسودان ⟵ القاهرة', schedule: 'رحلات يومية على مدار السنة', status: 'مؤكدة', price: '380,000 SDG' },
+            { id: 2, code: 'AZ-102', route: 'القاهرة ⟵ بورتسودان', schedule: 'رحلات يومية على مدار السنة', status: 'في الموعد', price: '370,000 SDG' },
+            { id: 3, code: 'AZ-201', route: 'بورتسودان ⟵ دبي', schedule: 'جدول موسمي يومي', status: 'مؤكدة', price: '450,000 SDG' },
+            { id: 4, code: 'AZ-202', route: 'دبي ⟵ بورتسودان', schedule: 'جدول موسمي يومي', status: 'مؤكدة', price: '440,000 SDG' },
+            { id: 5, code: 'AZ-301', route: 'بورتسودان ⟵ جدة', schedule: 'مواعيد منتظمة أسبوعياً', status: 'متاحة للحجز', price: '310,000 SDG' },
+            { id: 6, code: 'AZ-401', route: 'بورتسودان ⟵ إسطنبول', schedule: 'أيام الأربعاء والسبت', status: 'مؤكدة', price: '520,000 SDG' },
+            { id: 7, code: 'AZ-501', route: 'بورتسودان ⟵ الرياض', schedule: 'الإثنين والخميس أسبوعياً', status: 'مؤكدة', price: '390,000 SDG' },
+            { id: 8, code: 'AZ-601', route: 'الدوحة ⟵ بورتسودان', schedule: 'الثلاثاء والجمعة', status: 'مؤكدة', price: '460,000 SDG' }
         ];
 
-        let currentFlights = JSON.parse(localStorage.getItem('azmi_sudan_flights')) || defaultSudanFlights;
+        let currentTimetable = JSON.parse(localStorage.getItem('azmi_timetable')) || defaultTimetable;
 
-        function renderFlightsTable(flightsToRender) {
-            const tbody = document.getElementById('sudan-flights-tbody');
+        function renderTimetable(data) {
+            const tbody = document.getElementById('timetable-tbody');
             tbody.innerHTML = '';
-            if(flightsToRender.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; color:#64748b; padding:20px;">لا توجد رحلات مطابقة لخيارات البحث</td></tr>`;
+            if(data.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; color:#64748b; padding:20px;">لا توجد رحلات مطابقة لبحثك</td></tr>`;
                 return;
             }
-            flightsToRender.forEach(f => {
+            data.forEach(item => {
                 const tr = document.createElement('tr');
-                const badgeColor = f.type === 'outgoing' ? '#2c65bc' : '#059669';
                 tr.innerHTML = `
-                    <td><strong>${f.code}</strong></td>
-                    <td><span style="color: ${badgeColor}; background: rgba(0,0,0,0.04); padding: 4px 8px; border-radius: 4px; font-size:0.8rem;">${f.typeText}</span></td>
-                    <td>${f.route}</td>
-                    <td>${f.time}</td>
-                    <td><span style="color: var(--primary-blue); background: rgba(44,101,188,0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.85rem;">${f.status}</span></td>
-                    <td><span class="price-badge">${f.price}</span></td>
-                    <td><button class="book-now-btn" onclick="openBookingModal('${f.route} (${f.code})')">حجز دقيق</button></td>
+                    <td><strong>${item.code}</strong></td>
+                    <td>${item.route}</td>
+                    <td>${item.schedule}</td>
+                    <td><span style="color: var(--primary-blue); background: rgba(44,101,188,0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.85rem;">${item.status}</span></td>
+                    <td><span class="price-badge">${item.price}</span></td>
+                    <td><button class="book-btn" onclick="openBookingModal('${item.route} (${item.code})', '${item.schedule}')">حجز دقيق</button></td>
                 `;
                 tbody.appendChild(tr);
             });
         }
 
-        renderFlightsTable(currentFlights);
+        renderTimetable(currentTimetable);
 
-        // تصفية رحلات السودان الداخلة والخارجة بدقة
-        function filterSudanFlights() {
-            const direction = document.getElementById('filterDirection').value;
-            const destination = document.getElementById('filterDestination').value;
+        // محرك البحث التفاعلي المتقدم
+        function runAdvancedSearch() {
+            const dest = document.getElementById('engineDestination').value;
+            const dir = document.getElementById('engineDirection').value;
+            
+            let filtered = currentTimetable.filter(item => {
+                let matchDest = item.route.includes(dest);
+                let matchDir = true;
+                if(dir === 'outgoing') {
+                    matchDir = item.route.startsWith('بورتسودان') || item.route.startsWith('الخرطوم');
+                } else {
+                    matchDir = item.route.endsWith('بورتسودان') || item.route.endsWith('الخرطوم');
+                }
+                return matchDest && matchDir;
+            });
 
-            let filtered = currentFlights;
-
-            if(direction !== 'all') {
-                filtered = filtered.filter(f => f.type === direction);
-            }
-
-            if(destination !== '') {
-                filtered = filtered.filter(f => f.route.includes(destination));
-            }
-
-            renderFlightsTable(filtered);
-        }
-
-        function resetFilter() {
-            document.getElementById('filterDirection').value = 'all';
-            document.getElementById('filterDestination').value = '';
-            renderFlightsTable(currentFlights);
+            renderTimetable(filtered);
+            document.getElementById('timetable').scrollIntoView({ behavior: 'smooth' });
         }
 
         // تفاصيل نافذة الحجز الدقيق
-        function openBookingModal(routeStr) {
-            document.getElementById('bRoute').value = routeStr;
+        function openBookingModal(route, schedule) {
+            document.getElementById('bRoute').value = route + ' - ' + schedule;
             document.getElementById('bookingModal').style.display = 'flex';
         }
 
@@ -715,17 +802,17 @@
             const children = document.getElementById('pChildren').value;
             const passport = document.getElementById('bPassport').value;
 
-            const text = `حجز تذكرة سفر جديدة عبر نظام وكالة عزمي:%0A` +
-                         `✈️ الرحلة: ${route}%0A` +
+            const text = `طلب حجز تذكرة سفر عبر وكالة عزمي:%0A` +
+                         `✈️ خط السير: ${route}%0A` +
                          `📅 التاريخ: ${day} ${month}%0A` +
-                         `👥 الأفراد: (رجال: ${men} | نساء: ${women} | أطفال: ${children})%0A` +
+                         `👥 المسافرون: (رجال: ${men} | نساء: ${women} | أطفال: ${children})%0A` +
                          `🛂 رقم الجواز: ${passport}`;
 
             window.open(`https://wa.me/249125561790?text=${text}`, '_blank');
             closeBookingModal();
         }
 
-        // لوحة تحكم المدير الخاصة بك
+        // لوحة تحكم المدير
         const ADMIN_SECRET = "azmi2026";
 
         function openAdminLogin() {
@@ -750,18 +837,18 @@
         function openAdminDashboard() {
             const editorDiv = document.getElementById('adminFlightsEditor');
             editorDiv.innerHTML = '';
-            currentFlights.forEach((f, index) => {
+            currentTimetable.forEach((item, index) => {
                 editorDiv.innerHTML += `
                     <div style="background: #f8fafc; padding: 12px; border-radius: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1;">
-                        <div style="font-weight:bold; margin-bottom: 5px; color:var(--dark-blue);">${f.code} - ${f.route}</div>
+                        <div style="font-weight:bold; margin-bottom: 5px; color:var(--dark-blue);">${item.code} - ${item.route}</div>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
                             <div>
                                 <label style="font-size:0.75rem">السعر:</label>
-                                <input type="text" id="edit_price_${index}" value="${f.price}">
+                                <input type="text" id="edit_price_${index}" value="${item.price}">
                             </div>
                             <div>
                                 <label style="font-size:0.75rem">الحالة:</label>
-                                <input type="text" id="edit_status_${index}" value="${f.status}">
+                                <input type="text" id="edit_status_${index}" value="${item.status}">
                             </div>
                         </div>
                     </div>
@@ -775,16 +862,16 @@
         }
 
         function saveAdminChanges() {
-            currentFlights.forEach((f, index) => {
+            currentTimetable.forEach((item, index) => {
                 const newPrice = document.getElementById(`edit_price_${index}`).value;
                 const newStatus = document.getElementById(`edit_status_${index}`).value;
-                if(newPrice) f.price = newPrice;
-                if(newStatus) f.status = newStatus;
+                if(newPrice) item.price = newPrice;
+                if(newStatus) item.status = newStatus;
             });
-            localStorage.setItem('azmi_sudan_flights', JSON.stringify(currentFlights));
-            filterSudanFlights();
+            localStorage.setItem('azmi_timetable', JSON.stringify(currentTimetable));
+            renderTimetable(currentTimetable);
             closeAdminDashboard();
-            alert('تم حفظ وتحديث الأسعار وحالة الرحلات بنجاح!');
+            alert('تم حفظ وتحديث جدول الرحلات والأسعار بنجاح!');
         }
 
         window.onclick = function(event) {
