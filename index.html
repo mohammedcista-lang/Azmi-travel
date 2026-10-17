@@ -15,7 +15,7 @@
             --light-bg: #f8fafc;
             --text-color: #1e293b;
             --white: #ffffff;
-            --accent-glow: 0 0 25px rgba(44, 101, 188, 0.6);
+            --accent-glow: 0 0 20px rgba(44, 101, 188, 0.4);
             --transition: all 0.3s ease;
         }
 
@@ -30,13 +30,13 @@
         body {
             background-color: var(--light-bg);
             color: var(--text-color);
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
-        /* Header & Navbar */
+        /* Header & Navbar Fixed & Cleaned */
         header {
             background: var(--white);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
             position: fixed;
             top: 0;
             left: 0;
@@ -50,18 +50,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 20px;
+            padding: 10px 15px;
         }
 
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .logo-container img {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--primary-blue);
@@ -69,22 +69,23 @@
         }
 
         .logo-text h1 {
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             color: var(--dark-blue);
             font-weight: 900;
-            line-height: 1.2;
+            line-height: 1.1;
         }
 
         .logo-text span {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: var(--primary-blue);
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+            font-weight: 700;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 18px;
+            gap: 15px;
             align-items: center;
         }
 
@@ -92,7 +93,7 @@
             text-decoration: none;
             color: var(--text-color);
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: var(--transition);
         }
 
@@ -103,9 +104,9 @@
         .admin-btn {
             background: rgba(44, 101, 188, 0.1);
             color: var(--primary-blue);
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 0.85rem;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
             cursor: pointer;
             border: 1px solid var(--primary-blue);
             transition: var(--transition);
@@ -116,16 +117,17 @@
             color: var(--white);
         }
 
-        /* Hero Section */
+        /* Hero Section Spacing Fixed */
         .hero {
-            min-height: 80vh;
-            background: linear-gradient(135deg, rgba(27, 59, 111, 0.92), rgba(44, 101, 188, 0.85)), url('Azmi.jpg') center/cover no-repeat;[span_0](start_span)[span_0](end_span)
+            min-height: 75vh;
+            background: linear-gradient(135deg, rgba(27, 59, 111, 0.92), rgba(44, 101, 188, 0.85)), url('Azmi.jpg') center/cover no-repeat;[span_1](start_span)[span_1](end_span)
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: var(--white);
-            padding: 120px 20px 60px 20px;
+            padding: 100px 20px 50px 20px;
+            margin-top: 65px; /* لتجنب تداخل الهيدر الثابت */
         }
 
         .hero-content {
@@ -133,28 +135,28 @@
         }
 
         .hero-content h2 {
-            font-size: 2.7rem;
+            font-size: 2.3rem;
             font-weight: 900;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .hero-content p {
-            font-size: 1.15rem;
-            margin-bottom: 30px;
+            font-size: 1.05rem;
+            margin-bottom: 25px;
             font-weight: 300;
             background: rgba(255, 255, 255, 0.12);
-            padding: 18px 25px;
-            border-radius: 12px;
-            backdrop-filter: blur(8px);
+            padding: 15px 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(6px);
             border: 1px solid rgba(255,255,255,0.2);
-            line-height: 1.8;
+            line-height: 1.7;
         }
 
         .btn-main {
             background: var(--white);
             color: var(--primary-blue);
-            padding: 14px 32px;
+            padding: 12px 28px;
             border-radius: 30px;
             font-weight: 700;
             text-decoration: none;
@@ -163,7 +165,7 @@
             display: inline-block;
             border: none;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .btn-main:hover {
@@ -175,18 +177,18 @@
         /* Main Container */
         .container {
             max-width: 1200px;
-            margin: -40px auto 60px auto;
+            margin: -30px auto 50px auto;
             position: relative;
             z-index: 10;
-            padding: 0 20px;
+            padding: 0 15px;
         }
 
         .card-box {
             background: var(--white);
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-            padding: 30px;
-            margin-bottom: 30px;
+            border-radius: 14px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            padding: 25px;
+            margin-bottom: 25px;
             border-top: 4px solid var(--primary-blue);
         }
 
@@ -194,46 +196,46 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 12px;
         }
 
         .section-header h3 {
-            font-size: 1.35rem;
+            font-size: 1.25rem;
             color: var(--dark-blue);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         /* Advanced Search Engine */
         .search-engine-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) 130px;
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) 120px;
+            gap: 12px;
             align-items: end;
             background: #f8fafc;
-            padding: 20px;
-            border-radius: 12px;
+            padding: 15px;
+            border-radius: 10px;
             border: 1px solid #e2e8f0;
         }
 
         .search-field label {
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--dark-blue);
         }
 
         .search-field select, .search-field input {
             width: 100%;
-            padding: 10px 12px;
+            padding: 8px 10px;
             border: 1px solid #cbd5e1;
-            border-radius: 8px;
+            border-radius: 6px;
             font-family: 'Cairo', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             outline: none;
             background: var(--white);
         }
@@ -247,30 +249,30 @@
             width: 100%;
             border-collapse: collapse;
             text-align: right;
-            min-width: 750px;
+            min-width: 700px;
         }
 
         .flight-table th, .flight-table td {
-            padding: 15px;
+            padding: 12px 15px;
             border-bottom: 1px solid #e2e8f0;
         }
 
         .flight-table th {
             color: #64748b;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .flight-table td {
             font-weight: 600;
             color: var(--dark-blue);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .price-badge {
             color: #059669;
             background: #ecfdf5;
-            padding: 6px 12px;
+            padding: 5px 10px;
             border-radius: 6px;
             font-weight: 700;
         }
@@ -279,7 +281,7 @@
             background: var(--primary-blue);
             color: var(--white);
             border: none;
-            padding: 8px 16px;
+            padding: 6px 14px;
             border-radius: 6px;
             cursor: pointer;
             font-weight: 600;
@@ -293,21 +295,21 @@
         /* Destinations Showcase */
         .destinations-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
         }
 
         .destination-card {
-            height: 260px;
-            border-radius: 12px;
+            height: 240px;
+            border-radius: 10px;
             overflow: hidden;
             position: relative;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 20px;
+            padding: 15px;
             color: var(--white);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             transition: var(--transition);
         }
 
@@ -315,7 +317,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to top, rgba(27,59,111,0.95), rgba(27,59,111,0.2));
+            background: linear-gradient(to top, rgba(27,59,111,0.95), rgba(27,59,111,0.15));
             z-index: 1;
         }
 
@@ -325,78 +327,78 @@
         }
 
         .destination-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(44, 101, 188, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(44, 101, 188, 0.25);
         }
 
         .destination-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
+            font-size: 1.2rem;
+            margin-bottom: 4px;
             font-weight: 800;
         }
 
         .destination-card p {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             opacity: 0.9;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         /* Baggage & Services Info Grid */
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
         }
 
         .info-box {
             background: #f8fafc;
             border: 1px solid #e2e8f0;
-            padding: 25px;
-            border-radius: 12px;
+            padding: 20px;
+            border-radius: 10px;
         }
 
         .info-box i {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--primary-blue);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .info-box h4 {
             color: var(--dark-blue);
-            margin-bottom: 10px;
-            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-size: 1rem;
         }
 
         .info-box p {
             color: #64748b;
-            font-size: 0.9rem;
-            line-height: 1.6;
+            font-size: 0.85rem;
+            line-height: 1.5;
         }
 
         /* Location Section */
         .location-box {
             background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
             color: var(--white);
-            border-radius: 16px;
-            padding: 40px;
+            border-radius: 14px;
+            padding: 35px 20px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
 
         .location-box h3 {
-            font-size: 2rem;
-            margin-bottom: 15px;
+            font-size: 1.8rem;
+            margin-bottom: 12px;
         }
 
         .location-address {
             background: rgba(255, 255, 255, 0.1);
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            padding: 12px 25px;
+            gap: 10px;
+            padding: 10px 20px;
             border-radius: 30px;
-            margin-top: 15px;
-            font-size: 1.1rem;
+            margin-top: 12px;
+            font-size: 1rem;
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255,255,255,0.2);
         }
@@ -404,18 +406,18 @@
         /* WhatsApp Floating Button */
         .whatsapp-float {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
+            bottom: 20px;
+            right: 20px;
             background: #25d366;
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
             z-index: 1001;
             transition: var(--transition);
             text-decoration: none;
@@ -437,17 +439,17 @@
             z-index: 2000;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 15px;
             backdrop-filter: blur(4px);
         }
 
         .modal-content {
             background: var(--white);
             width: 100%;
-            max-width: 550px;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            max-width: 500px;
+            border-radius: 14px;
+            padding: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
             position: relative;
             max-height: 90vh;
             overflow-y: auto;
@@ -455,9 +457,9 @@
 
         .close-modal {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 1.5rem;
+            top: 15px;
+            left: 15px;
+            font-size: 1.4rem;
             cursor: pointer;
             color: #64748b;
             background: none;
@@ -465,23 +467,23 @@
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
             font-weight: 600;
             color: var(--dark-blue);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .form-group input, .form-group select {
             width: 100%;
-            padding: 10px 14px;
+            padding: 9px 12px;
             border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            font-size: 0.95rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
             outline: none;
             font-family: 'Cairo', sans-serif;
         }
@@ -489,7 +491,7 @@
         .passengers-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
+            gap: 8px;
         }
 
         /* Footer */
@@ -497,8 +499,8 @@
             background: #0f172a;
             color: #94a3b8;
             text-align: center;
-            padding: 25px 20px;
-            font-size: 0.9rem;
+            padding: 20px;
+            font-size: 0.85rem;
         }
 
         footer span {
@@ -506,9 +508,11 @@
             font-weight: 700;
         }
 
+        /* Responsive Mobile Adjustments */
         @media (max-width: 768px) {
-            .hero-content h2 { font-size: 2.1rem; }
-            nav ul { display: none; }
+            .hero-content h2 { font-size: 1.8rem; }
+            .hero-content p { font-size: 0.95rem; }
+            nav ul { display: none; } /* إخفاء الروابط في الشاشات الصغيرة واكتفائها بالهيدر النظيف */
         }
     </style>
 </head>
@@ -518,7 +522,7 @@
     <header>
         <div class="navbar">
             <div class="logo-container">
-                <img src="Azmi.jpg" alt="شعار وكالة عزمي">[span_1](start_span)[span_1](end_span)
+                <img src="Azmi.jpg" alt="شعار وكالة عزمي">[span_2](start_span)[span_2](end_span)
                 <div class="logo-text">
                     <h1>وكالة عزمي</h1>
                     <span>AZMI TRAVEL & TOURISM</span>
@@ -532,9 +536,11 @@
                     <li><a href="#destinations">الوجهات</a></li>
                     <li><a href="#baggage">سياسة الأمتعة</a></li>
                     <li><a href="#location">موقعنا</a></li>
-                    <li><button class="admin-btn" onclick="openAdminLogin()"><i class="fa-solid fa-lock"></i> لوحة المدير</button></li>
                 </ul>
             </nav>
+            <div>
+                <button class="admin-btn" onclick="openAdminLogin()"><i class="fa-solid fa-lock"></i> لوحة المدير</button>
+            </div>
         </div>
     </header>
 
@@ -582,16 +588,16 @@
                     </select>
                 </div>
                 <div>
-                    <button class="btn-main" style="width: 100%; padding: 10px; font-size: 0.9rem;" onclick="runAdvancedSearch()">بحث رحلات</button>
+                    <button class="btn-main" style="width: 100%; padding: 9px; font-size: 0.85rem;" onclick="runAdvancedSearch()">بحث رحلات</button>
                 </div>
             </div>
         </section>
 
-        <!-- 2. Flight Timetable (Seasonal & Annual Schedule for Sudan) -->
+        <!-- 2. Flight Timetable -->
         <section id="timetable" class="card-box">
             <div class="section-header">
                 <h3><i class="fa-solid fa-calendar-days" style="color: var(--primary-blue);"></i> جدول مواعيد الرحلات الموسمية والسنوية (السودان - داخلة وخارجة)</h3>
-                <span style="font-size: 0.85rem; color: #059669; background: #ecfdf5; padding: 5px 12px; border-radius: 20px; font-weight: 600;">
+                <span style="font-size: 0.8rem; color: #059669; background: #ecfdf5; padding: 4px 10px; border-radius: 20px; font-weight: 600;">
                     <i class="fa-solid fa-circle-dot"></i> تسعير عالمي مباشر
                 </span>
             </div>
@@ -693,7 +699,7 @@
     <div id="bookingModal" class="modal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeBookingModal()">&times;</button>
-            <h3 style="color: var(--dark-blue); margin-bottom: 20px;"><i class="fa-solid fa-ticket"></i> نظام الحجز الدقيق - وكالة عزمي</h3>
+            <h3 style="color: var(--dark-blue); margin-bottom: 15px;"><i class="fa-solid fa-ticket"></i> نظام الحجز الدقيق - وكالة عزمي</h3>
             <form id="bookingForm" onsubmit="sendPreciseBookingToWhatsApp(event)">
                 <div class="form-group">
                     <label>خط السير المعمد:</label>
@@ -730,15 +736,15 @@
                     <label>عدد الأفراد:</label>
                     <div class="passengers-grid">
                         <div>
-                            <label style="font-size:0.8rem">رجال</label>
+                            <label style="font-size:0.75rem">رجال</label>
                             <input type="number" id="pMen" min="0" value="1">
                         </div>
                         <div>
-                            <label style="font-size:0.8rem">نساء</label>
+                            <label style="font-size:0.75rem">نساء</label>
                             <input type="number" id="pWomen" min="0" value="0">
                         </div>
                         <div>
-                            <label style="font-size:0.8rem">أطفال</label>
+                            <label style="font-size:0.75rem">أطفال</label>
                             <input type="number" id="pChildren" min="0" value="0">
                         </div>
                     </div>
@@ -747,21 +753,21 @@
                     <label>رقم الجواز (أو أرقام الجوازات):</label>
                     <input type="text" id="bPassport" required placeholder="أدخل أرقام الجوازات بدقة">
                 </div>
-                <button type="submit" class="btn-main" style="width: 100%; margin-top: 10px; background: #25d366; color: white;">إرسال تفاصيل الحجز عبر واتساب</button>
+                <button type="submit" class="btn-main" style="width: 100%; margin-top: 8px; background: #25d366; color: white; padding: 10px;">إرسال تفاصيل الحجز عبر واتساب</button>
             </form>
         </div>
     </div>
 
     <!-- Admin Login Modal -->
     <div id="adminLoginModal" class="modal">
-        <div class="modal-content" style="max-width: 400px;">
+        <div class="modal-content" style="max-width: 380px;">
             <button class="close-modal" onclick="closeAdminLogin()">&times;</button>
-            <h3 style="color: var(--dark-blue); margin-bottom: 20px;"><i class="fa-solid fa-lock"></i> دخول مدير الموقع</h3>
+            <h3 style="color: var(--dark-blue); margin-bottom: 15px;"><i class="fa-solid fa-lock"></i> دخول مدير الموقع</h3>
             <div class="form-group">
                 <label>كلمة المرور السرية:</label>
                 <input type="password" id="adminPassInput" placeholder="أدخل كلمة المرور الخاصة بك">
             </div>
-            <button class="btn-main" style="width: 100%;" onclick="verifyAdmin()">تسجيل الدخول</button>
+            <button class="btn-main" style="width: 100%; padding: 10px;" onclick="verifyAdmin()">تسجيل الدخول</button>
         </div>
     </div>
 
@@ -769,21 +775,20 @@
     <div id="adminDashboardModal" class="modal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeAdminDashboard()">&times;</button>
-            <h3 style="color: var(--dark-blue); margin-bottom: 15px;"><i class="fa-solid fa-gears"></i> لوحة التحكم اليدوية للأسعار والرحلات</h3>
-            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 20px;">قم بتعديل الأسعار أو الحالات لتظهر حصرياً للعملاء.</p>
+            <h3 style="color: var(--dark-blue); margin-bottom: 12px;"><i class="fa-solid fa-gears"></i> لوحة التحكم اليدوية للأسعار والرحلات</h3>
+            <p style="font-size: 0.8rem; color: #64748b; margin-bottom: 15px;">قم بتعديل الأسعار أو الحالات لتظهر حصرياً للعملاء.</p>
             <div id="adminFlightsEditor"></div>
-            <button class="btn-main" style="width: 100%; margin-top: 15px; background: #059669;" onclick="saveAdminChanges()">حفظ التحديثات ونشرها</button>
+            <button class="btn-main" style="width: 100%; margin-top: 12px; background: #059669; padding: 10px;" onclick="saveAdminChanges()">حفظ التحديثات ونشرها</button>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 <span>وكالة عزمي للسفر والسياحة (Azmi Travel & Tourism)</span>[span_2](start_span)[span_2](end_span)</p>
+        <p>جميع الحقوق محفوظة &copy; 2026 <span>وكالة عزمي للسفر والسياحة (Azmi Travel & Tourism)</span>[span_3](start_span)[span_3](end_span)</p>
     </footer>
 
     <!-- JavaScript System Logic -->
     <script>
-        // جدول الرحلات والأسعار والجدول الموسمي والسنوي لحركة السفر في السودان
         let defaultTimetable = [
             { id: 1, code: 'AZ-101', route: 'بورتسودان ⟵ القاهرة', schedule: 'رحلات يومية على مدار السنة', status: 'مؤكدة', price: '380,000 SDG' },
             { id: 2, code: 'AZ-102', route: 'القاهرة ⟵ بورتسودان', schedule: 'رحلات يومية على مدار السنة', status: 'في الموعد', price: '370,000 SDG' },
@@ -810,7 +815,7 @@
                     <td><strong>${item.code}</strong></td>
                     <td>${item.route}</td>
                     <td>${item.schedule}</td>
-                    <td><span style="color: var(--primary-blue); background: rgba(44,101,188,0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.85rem;">${item.status}</span></td>
+                    <td><span style="color: var(--primary-blue); background: rgba(44,101,188,0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.8rem;">${item.status}</span></td>
                     <td><span class="price-badge">${item.price}</span></td>
                     <td><button class="book-btn" onclick="openBookingModal('${item.route} (${item.code})', '${item.schedule}')">حجز دقيق</button></td>
                 `;
@@ -820,7 +825,6 @@
 
         renderTimetable(currentTimetable);
 
-        // محرك البحث التفاعلي المتقدم
         function runAdvancedSearch() {
             const dest = document.getElementById('engineDestination').value;
             const dir = document.getElementById('engineDirection').value;
@@ -840,7 +844,6 @@
             document.getElementById('timetable').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // تفاصيل نافذة الحجز الدقيق
         function openBookingModal(route, schedule) {
             document.getElementById('bRoute').value = route + ' - ' + schedule;
             document.getElementById('bookingModal').style.display = 'flex';
@@ -870,7 +873,6 @@
             closeBookingModal();
         }
 
-        // لوحة تحكم المدير
         const ADMIN_SECRET = "azmi2026";
 
         function openAdminLogin() {
@@ -897,16 +899,16 @@
             editorDiv.innerHTML = '';
             currentTimetable.forEach((item, index) => {
                 editorDiv.innerHTML += `
-                    <div style="background: #f8fafc; padding: 12px; border-radius: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1;">
-                        <div style="font-weight:bold; margin-bottom: 5px; color:var(--dark-blue);">${item.code} - ${item.route}</div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div style="background: #f8fafc; padding: 10px; border-radius: 6px; margin-bottom: 8px; border: 1px solid #cbd5e1;">
+                        <div style="font-weight:bold; margin-bottom: 4px; color:var(--dark-blue); font-size:0.85rem;">${item.code} - ${item.route}</div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
                             <div>
-                                <label style="font-size:0.75rem">السعر:</label>
-                                <input type="text" id="edit_price_${index}" value="${item.price}">
+                                <label style="font-size:0.7rem">السعر:</label>
+                                <input type="text" id="edit_price_${index}" value="${item.price}" style="padding:6px;">
                             </div>
                             <div>
-                                <label style="font-size:0.75rem">الحالة:</label>
-                                <input type="text" id="edit_status_${index}" value="${item.status}">
+                                <label style="font-size:0.7rem">الحالة:</label>
+                                <input type="text" id="edit_status_${index}" value="${item.status}" style="padding:6px;">
                             </div>
                         </div>
                     </div>
