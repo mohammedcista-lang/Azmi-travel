@@ -1,152 +1,493 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>عزمي للسفر والسياحة</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وكالة عزمي للسفر والسياحة | Azmi Travel & Tourism</title>
+    <!-- Google Fonts Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #2c65bc;
+            --dark-blue: #1b3b6f;
+            --light-bg: #f8fafc;
+            --text-color: #1e293b;
+            --white: #ffffff;
+            --accent-glow: 0 0 25px rgba(44, 101, 188, 0.6);
+        }
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial;
-    direction: rtl;
-    background: #0a0a0a;
-    color: white;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
 
-/* هيدر فاخر */
-header {
-    position: fixed;
-    width: 100%;
-    background: rgba(0,0,0,0.8);
-    padding: 15px;
-    text-align: center;
-    z-index: 1000;
-}
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-/* هيرو */
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-    url('https://images.unsplash.com/photo-1502920917128-1aa500764b6b');
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+        /* Header & Navbar */
+        header {
+            background: var(--white);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
 
-.hero h1 {
-    font-size: 45px;
-}
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
 
-/* الفورم */
-.booking {
-    background: white;
-    color: black;
-    padding: 20px;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 400px;
-    margin: -100px auto 50px;
-}
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-.booking input {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-}
+        .logo-container img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-blue);
+            box-shadow: var(--accent-glow);
+            transition: transform 0.3s ease;
+        }
 
-/* زر */
-button {
-    width: 100%;
-    padding: 12px;
-    background: gold;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-}
+        .logo-container img:hover {
+            transform: scale(1.05);
+        }
 
-/* العروض */
-.section {
-    padding: 40px;
-    text-align: center;
-}
+        .logo-text h1 {
+            font-size: 1.3rem;
+            color: var(--dark-blue);
+            font-weight: 900;
+        }
 
-.card {
-    background: #1a1a1a;
-    margin: 10px;
-    padding: 20px;
-    border-radius: 10px;
-}
+        .logo-text span {
+            font-size: 0.8rem;
+            color: var(--primary-blue);
+            letter-spacing: 1px;
+        }
 
-/* واتساب */
-.whatsapp {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background: #25D366;
-    padding: 15px;
-    border-radius: 50%;
-    text-decoration: none;
-    color: white;
-}
-</style>
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(135deg, rgba(27, 59, 111, 0.9), rgba(44, 101, 188, 0.8)), url('Azmi.jpg') center/cover no-repeat;[span_2](start_span)[span_2](end_span)
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 25px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .btn {
+            background: var(--white);
+            color: var(--primary-blue);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: var(--accent-glow);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Live Flight Ticker Section */
+        .live-flights {
+            max-width: 1200px;
+            margin: -50px auto 50px auto;
+            position: relative;
+            z-index: 10;
+            padding: 0 20px;
+        }
+
+        .flight-card-container {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 30px;
+            border-top: 5px solid var(--primary-blue);
+        }
+
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title h3 {
+            font-size: 1.5rem;
+            color: var(--dark-blue);
+        }
+
+        .update-badge {
+            background: rgba(44, 101, 188, 0.1);
+            color: var(--primary-blue);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .update-badge i {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+
+        .flight-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+        }
+
+        .flight-table th, .flight-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .flight-table th {
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .flight-table td {
+            font-weight: 700;
+            color: var(--dark-blue);
+        }
+
+        .price-tag {
+            color: #059669;
+            background: #ecfdf5;
+            padding: 5px 10px;
+            border-radius: 6px;
+        }
+
+        /* Services Section */
+        .services {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 50px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-box {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #f1f5f9;
+        }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(44, 101, 188, 0.15);
+        }
+
+        .service-box i {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .service-box h4 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            color: var(--dark-blue);
+        }
+
+        .service-box p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* Location Section */
+        .location-section {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .location-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .location-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .location-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            margin-top: 30px;
+        }
+
+        .location-card i {
+            font-size: 2.5rem;
+            color: #60a5fa;
+            margin-bottom: 15px;
+        }
+
+        .location-card p {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9rem;
+        }
+
+        footer span {
+            color: var(--white);
+            font-weight: 700;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-    <h2>عزمي للسفر والسياحة ✈️</h2>
-</header>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <div class="logo-container">
+                <img src="Azmi.jpg" alt="شعار وكالة عزمي"> <!--[span_3](start_span)[span_3](end_span) -->
+                <div class="logo-text">
+                    <h1>وكالة عزمي</h1>
+                    <span>AZMI TRAVEL & TOURISM</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#flights">الرحلات والأسعار</a></li>
+                    <li><a href="#services">خدماتنا</a></li>
+                    <li><a href="#location">موقعنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<div class="hero">
-    <div>
-        <h1>احجز رحلتك الآن</h1>
-        <p>أفضل الأسعار - خدمة موثوقة</p>
-    </div>
-</div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>بوابتك نحو العالم بثقة واحترافية</h2>
+            <p>وكالة عزمي وجهة موثوقة تقدم خدمات حجز الطيران والسياحة والحج والعمرة مع خدمة عملاء متاحة على مدار الساعة.</p>
+            <a href="#flights" class="btn">استعرض الرحلات والأسعار المحدثة</a>
+        </div>
+    </section>
 
-<!-- فورم الحجز -->
-<div class="booking">
-    <h3>احجز رحلتك</h3>
+    <!-- Live Flight Updates Section -->
+    <section id="flights" class="live-flights">
+        <div class="flight-card-container">
+            <div class="section-title">
+                <h3><i class="fa-solid fa-plane-departure" style="color: var(--primary-blue); margin-left: 10px;"></i> أحدث بيانات الرحلات والأسعار (تحديث حي كل ساعة)</h3>
+                <div class="update-badge">
+                    <i class="fa-solid fa-circle-dot"></i> التحديث القادم خلال: <span id="countdown">59:45</span>
+                </div>
+            </div>
+            <table class="flight-table">
+                <thead>
+                    <tr>
+                        <th>رقم الرحلة</th>
+                        <th>الوجهة</th>
+                        <th>الوقت</th>
+                        <th>الحالة</th>
+                        <th>السعر المتوقع</th>
+                    </tr>
+                </thead>
+                <tbody id="flight-table-body">
+                    <!-- سيتم تحديث البيانات ديناميكياً عبر الجافاسكريبت -->
+                </tbody>
+            </table>
+        </div>
+    </section>
 
-    <input type="text" id="name" placeholder="اسمك">
-    <input type="text" id="from" placeholder="من">
-    <input type="text" id="to" placeholder="إلى">
-    <input type="date" id="date">
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>خدماتنا الفاخرة</h2>
+        <div class="services-grid">
+            <div class="service-box">
+                <i class="fa-solid fa-plane"></i>
+                <h4>حجز الطيران</h4>
+                <p>حجوزات فورية ومؤكدة على أفضل خطوط الطيران العالمية والمحلية بأفضل الأسعار التنافسية.</p>
+            </div>
+            <div class="service-box">
+                <i class="fa-solid fa-kaaba"></i>
+                <h4>الحج والعمرة</h4>
+                <p>برامج متكاملة ومميزة لرحلات الحج والعمرة مع إقامة راقية وخدمات إشرافية على أعلى مستوى.</p>
+            </div>
+            <div class="service-box">
+                <i class="fa-solid fa-earth-americas"></i>
+                <h4>السياحة والسفر</h4>
+                <p>باقات سياحية عالمية مصممة خصيصاً لتناسب أهوائكم وتمنحكم تجارب استثنائية لا تُنسى.</p>
+            </div>
+            <div class="service-box">
+                <i class="fa-solid fa-headset"></i>
+                <h4>خدمة عملاء 24/7</h4>
+                <p>فريق محترف ومتخصص جاهز لخدمتكم والإجابة على استفساراتكم وتلبية طلباتكم على مدار الساعة.</p>
+            </div>
+        </div>
+    </section>
 
-    <button onclick="sendWhatsApp()">احجز الآن</button>
-</div>
+    <!-- Location Section -->
+    <section id="location" class="location-section">
+        <div class="location-container">
+            <h2>موقع الوكالة</h2>
+            <p>تشرفنا زيارتكم لمقرنا الرئيسي لتقديم أفضل الاستشارات وخدمات السفر الشخصية.</p>
+            <div class="location-card">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>الخرطوم _ غرب صينية القندول</p>
+            </div>
+        </div>
+    </section>
 
-<!-- العروض -->
-<div class="section">
-    <h2>العروض</h2>
+    <!-- Footer -->
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026 <span>وكالة عزمي للسفر والسياحة (Azmi Travel & Tourism)</span>[span_4](start_span)[span_4](end_span)</p>
+    </footer>
 
-    <div class="card">
-        جدة ✈️ بورتسودان - 980,000
-    </div>
+    <!-- JavaScript for Live Hourly Price Simulation & Dynamic Updates -->
+    <script>
+        // محاكاة بيانات الرحلات مع تحديث الأسعار بصورة ديناميكية كل ساعة
+        const flightsData = [
+            { code: 'AZ-401', route: 'الخرطوم ⟵ دبي', time: '08:00 ص', status: 'مؤكدة', basePrice: 450000 },
+            { code: 'AZ-702', route: 'الخرطوم ⟵ القاهرة', time: '11:30 ص', status: 'في الموعد', basePrice: 380000 },
+            { code: 'AZ-905', route: 'الخرطوم ⟵ جدة', time: '03:15 م', status: 'متاحة للحجز', basePrice: 310000 },
+            { code: 'AZ-220', route: 'الخرطوم ⟵ إسطنبول', time: '07:00 م', status: 'مؤكدة', basePrice: 520000 }
+        ];
 
-    <div class="card">
-        بورتسودان ✈️ جدة - 830,000
-    </div>
-</div>
+        function renderFlights() {
+            const tbody = document.getElementById('flight-table-body');
+            tbody.innerHTML = '';
+            
+            flightsData.forEach(flight => {
+                // إضافة تقلب طفيف عشوائي في السعر ليعطي شعور التحديث الحي
+                const randomVariation = Math.floor(Math.random() * 5000) - 2500;
+                const currentPrice = flight.basePrice + randomVariation;
 
-<!-- زر واتساب -->
-<a class="whatsapp" href="https://wa.me/249125561790" target="_blank">💬</a>
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td><strong>${flight.code}</strong></td>
+                    <td>${flight.route}</td>
+                    <td>${flight.time}</td>
+                    <td><span style="color: var(--primary-blue); background: rgba(44,101,188,0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.85rem;">${flight.status}</span></td>
+                    <td><span class="price-tag">${currentPrice.toLocaleString()} SDG</span></td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
 
-<script>
-function sendWhatsApp() {
-    var name = document.getElementById("name").value;
-    var from = document.getElementById("from").value;
-    var to = document.getElementById("to").value;
-    var date = document.getElementById("date").value;
+        // تشغيل التحديث عند تحميل الصفحة
+        renderFlights();
 
-    var message = `حجز جديد:%0Aالاسم: ${name}%0Aمن: ${from}%0Aإلى: ${to}%0Aالتاريخ: ${date}`;
+        // مؤقت تنازلي وهمي للساعة القادمة
+        let totalSeconds = 3585; // 59 دقيقة و 45 ثانية
+        const countdownElement = document.getElementById('countdown');
 
-    window.open("https://wa.me/249125561790?text=" + message);
-}
-</script>
-
+        setInterval(() => {
+            let minutes = Math.floor(totalSeconds / 60);
+            let seconds = totalSeconds % 60;
+            countdownElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            totalSeconds--;
+            
+            if (totalSeconds < 0) {
+                totalSeconds = 3600; // إعادة ضبط الساعة
+                renderFlights(); // تحديث البيانات والأسعار تلقائياً كل ساعة
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
