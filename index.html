@@ -16,6 +16,7 @@
             --text-color: #1e293b;
             --white: #ffffff;
             --accent-glow: 0 0 25px rgba(44, 101, 188, 0.6);
+            --transition: all 0.3s ease;
         }
 
         * {
@@ -28,7 +29,7 @@
         body {
             background-color: var(--light-bg);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         /* Header & Navbar */
@@ -48,7 +49,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
+            padding: 12px 20px;
         }
 
         .logo-container {
@@ -58,27 +59,22 @@
         }
 
         .logo-container img {
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--primary-blue);
             box-shadow: var(--accent-glow);
-            transition: transform 0.3s ease;
-        }
-
-        .logo-container img:hover {
-            transform: scale(1.05);
         }
 
         .logo-text h1 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--dark-blue);
             font-weight: 900;
         }
 
         .logo-text span {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--primary-blue);
             letter-spacing: 1px;
         }
@@ -86,32 +82,48 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 18px;
+            align-items: center;
         }
 
         nav ul li a {
             text-decoration: none;
             color: var(--text-color);
             font-weight: 600;
-            transition: color 0.3s;
+            font-size: 0.9rem;
+            transition: var(--transition);
         }
 
         nav ul li a:hover {
             color: var(--primary-blue);
         }
 
+        .admin-btn {
+            background: rgba(44, 101, 188, 0.1);
+            color: var(--primary-blue);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            border: 1px solid var(--primary-blue);
+            transition: var(--transition);
+        }
+
+        .admin-btn:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
         /* Hero Section */
         .hero {
-            height: 90vh;
-            background: linear-gradient(135deg, rgba(27, 59, 111, 0.9), rgba(44, 101, 188, 0.8)), url('Azmi.jpg') center/cover no-repeat;[span_2](start_span)[span_2](end_span)
+            min-height: 85vh;
+            background: linear-gradient(135deg, rgba(27, 59, 111, 0.92), rgba(44, 101, 188, 0.85)), url('Azmi.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: var(--white);
-            padding: 0 20px;
-            margin-top: 80px;
-            position: relative;
+            padding: 120px 20px 60px 20px;
         }
 
         .hero-content {
@@ -119,96 +131,115 @@
         }
 
         .hero-content h2 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: 900;
             margin-bottom: 20px;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .hero-content p {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             margin-bottom: 30px;
             font-weight: 300;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.12);
             padding: 15px 25px;
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
             border: 1px solid rgba(255,255,255,0.2);
         }
 
-        .btn {
+        .btn-main {
             background: var(--white);
             color: var(--primary-blue);
-            padding: 12px 30px;
+            padding: 14px 32px;
             border-radius: 30px;
             font-weight: 700;
             text-decoration: none;
             box-shadow: var(--accent-glow);
-            transition: all 0.3s ease;
+            transition: var(--transition);
             display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
 
-        .btn:hover {
+        .btn-main:hover {
             background: var(--primary-blue);
             color: var(--white);
             transform: translateY(-3px);
         }
 
-        /* Live Flight Ticker Section */
-        .live-flights {
+        /* Main Container Layout */
+        .container {
             max-width: 1200px;
-            margin: -50px auto 50px auto;
+            margin: -40px auto 60px auto;
             position: relative;
             z-index: 10;
             padding: 0 20px;
         }
 
-        .flight-card-container {
+        .card-box {
             background: var(--white);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
             padding: 30px;
-            border-top: 5px solid var(--primary-blue);
+            margin-bottom: 30px;
+            border-top: 4px solid var(--primary-blue);
         }
 
-        .section-title {
+        .section-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
-        .section-title h3 {
-            font-size: 1.5rem;
+        .section-header h3 {
+            font-size: 1.4rem;
+            color: var(--dark-blue);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Feature 1: Advanced Search Box */
+        .search-box-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) 140px;
+            gap: 15px;
+            align-items: end;
+        }
+
+        .search-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
             color: var(--dark-blue);
         }
 
-        .update-badge {
-            background: rgba(44, 101, 188, 0.1);
-            color: var(--primary-blue);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        .search-group input, .search-group select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.9rem;
+            outline: none;
         }
 
-        .update-badge i {
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.4; }
-            100% { opacity: 1; }
+        /* Flight Tables */
+        .flight-table-wrapper {
+            overflow-x: auto;
         }
 
         .flight-table {
             width: 100%;
             border-collapse: collapse;
             text-align: right;
+            min-width: 650px;
         }
 
         .flight-table th, .flight-table td {
@@ -219,107 +250,221 @@
         .flight-table th {
             color: #64748b;
             font-weight: 600;
+            font-size: 0.9rem;
         }
 
         .flight-table td {
-            font-weight: 700;
+            font-weight: 600;
             color: var(--dark-blue);
-        }
-
-        .price-tag {
-            color: #059669;
-            background: #ecfdf5;
-            padding: 5px 10px;
-            border-radius: 6px;
-        }
-
-        /* Services Section */
-        .services {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .services h2 {
-            font-size: 2.5rem;
-            color: var(--dark-blue);
-            margin-bottom: 50px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .service-box {
-            background: var(--white);
-            padding: 40px 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid #f1f5f9;
-        }
-
-        .service-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(44, 101, 188, 0.15);
-        }
-
-        .service-box i {
-            font-size: 3rem;
-            color: var(--primary-blue);
-            margin-bottom: 20px;
-        }
-
-        .service-box h4 {
-            font-size: 1.25rem;
-            margin-bottom: 15px;
-            color: var(--dark-blue);
-        }
-
-        .service-box p {
-            color: #64748b;
             font-size: 0.95rem;
         }
 
-        /* Location Section */
-        .location-section {
-            background: var(--dark-blue);
+        .price-badge {
+            color: #059669;
+            background: #ecfdf5;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+        }
+
+        .book-now-btn {
+            background: var(--primary-blue);
             color: var(--white);
-            padding: 80px 20px;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .book-now-btn:hover {
+            background: var(--dark-blue);
+        }
+
+        /* Feature 4: Destinations Showcase */
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .destination-card {
+            background: linear-gradient(135deg, rgba(27,59,111,0.85), rgba(44,101,188,0.75)), url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=500&q=80') center/cover;
+            border-radius: 12px;
+            padding: 30px 20px;
+            color: var(--white);
             text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
         }
 
-        .location-container {
-            max-width: 800px;
-            margin: 0 auto;
+        .destination-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(44, 101, 188, 0.25);
         }
 
-        .location-container h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+        .destination-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            font-weight: 800;
         }
 
-        .location-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            margin-top: 30px;
-        }
-
-        .location-card i {
-            font-size: 2.5rem;
-            color: #60a5fa;
+        .destination-card p {
+            font-size: 0.9rem;
+            opacity: 0.9;
             margin-bottom: 15px;
         }
 
-        .location-card p {
-            font-size: 1.2rem;
+        /* Feature 6: Baggage & Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .info-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .info-box i {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+        }
+
+        .info-box h4 {
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .info-box p {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Location Section */
+        .location-box {
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: var(--white);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .location-box h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .location-address {
+            background: rgba(255, 255, 255, 0.1);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 25px;
+            border-radius: 30px;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
+            z-index: 1001;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Modal Windows */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            background: var(--white);
+            width: 100%;
+            max-width: 550px;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #64748b;
+            background: none;
+            border: none;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
             font-weight: 600;
+            color: var(--dark-blue);
+            font-size: 0.9rem;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .passengers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
         }
 
         /* Footer */
@@ -327,13 +472,18 @@
             background: #0f172a;
             color: #94a3b8;
             text-align: center;
-            padding: 30px 20px;
+            padding: 25px 20px;
             font-size: 0.9rem;
         }
 
         footer span {
             color: var(--white);
             font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h2 { font-size: 2.1rem; }
+            nav ul { display: none; }
         }
     </style>
 </head>
@@ -343,7 +493,7 @@
     <header>
         <div class="navbar">
             <div class="logo-container">
-                <img src="Azmi.jpg" alt="شعار وكالة عزمي"> <!--[span_3](start_span)[span_3](end_span) -->
+                <img src="Azmi.jpg" alt="شعار وكالة عزمي">[span_1](start_span)[span_1](end_span)
                 <div class="logo-text">
                     <h1>وكالة عزمي</h1>
                     <span>AZMI TRAVEL & TOURISM</span>
@@ -352,9 +502,12 @@
             <nav>
                 <ul>
                     <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#flights">الرحلات والأسعار</a></li>
-                    <li><a href="#services">خدماتنا</a></li>
+                    <li><a href="#search-section">محرك البحث</a></li>
+                    <li><a href="#flights">الرحلات والجداول</a></li>
+                    <li><a href="#destinations">الوجهات</a></li>
+                    <li><a href="#baggage">سياسة الأمتعة</a></li>
                     <li><a href="#location">موقعنا</a></li>
+                    <li><button class="admin-btn" onclick="openAdminLogin()"><i class="fa-solid fa-lock"></i> لوحة المدير</button></li>
                 </ul>
             </nav>
         </div>
@@ -365,129 +518,353 @@
         <div class="hero-content">
             <h2>بوابتك نحو العالم بثقة واحترافية</h2>
             <p>وكالة عزمي وجهة موثوقة تقدم خدمات حجز الطيران والسياحة والحج والعمرة مع خدمة عملاء متاحة على مدار الساعة.</p>
-            <a href="#flights" class="btn">استعرض الرحلات والأسعار المحدثة</a>
+            <button class="btn-main" onclick="openBookingModal('رحلة عامة', 'حسب الطلب', '')">احجز تذكرتك الفورية</button>
         </div>
     </section>
 
-    <!-- Live Flight Updates Section -->
-    <section id="flights" class="live-flights">
-        <div class="flight-card-container">
-            <div class="section-title">
-                <h3><i class="fa-solid fa-plane-departure" style="color: var(--primary-blue); margin-left: 10px;"></i> أحدث بيانات الرحلات والأسعار (تحديث حي كل ساعة)</h3>
-                <div class="update-badge">
-                    <i class="fa-solid fa-circle-dot"></i> التحديث القادم خلال: <span id="countdown">59:45</span>
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Feature 1: Advanced Interactive Search Box -->
+        <section id="search-section" class="card-box">
+            <div class="section-header">
+                <h3><i class="fa-solid fa-magnifying-glass-location" style="color: var(--primary-blue);"></i> محرك البحث الذكي للرحلات</h3>
+            </div>
+            <div class="search-box-grid">
+                <div class="search-group">
+                    <label>الوجهة / خط السير:</label>
+                    <select id="searchRoute">
+                        <option value="">جميع الوجهات</option>
+                        <option value="دبي">الخرطوم ⟵ دبي</option>
+                        <option value="القاهرة">الخرطوم ⟵ القاهرة</option>
+                        <option value="جدة">الخرطوم ⟵ جدة</option>
+                        <option value="إسطنبول">الخرطوم ⟵ إسطنبول</option>
+                    </select>
+                </div>
+                <div class="search-group">
+                    <label>نوع الرحلة:</label>
+                    <select id="searchType">
+                        <option value="one-way">ذهاب فقط</option>
+                        <option value="round-trip">ذهاب وعودة</option>
+                    </select>
+                </div>
+                <div class="search-group">
+                    <label>تاريخ السفر:</label>
+                    <input type="text" id="searchDate" placeholder="اختر الشهر/اليوم">
+                </div>
+                <div>
+                    <button class="btn-main" style="width: 100%; padding: 10px;" onclick="filterFlights()">بحث</button>
                 </div>
             </div>
-            <table class="flight-table">
-                <thead>
-                    <tr>
-                        <th>رقم الرحلة</th>
-                        <th>الوجهة</th>
-                        <th>الوقت</th>
-                        <th>الحالة</th>
-                        <th>السعر المتوقع</th>
-                    </tr>
-                </thead>
-                <tbody id="flight-table-body">
-                    <!-- سيتم تحديث البيانات ديناميكياً عبر الجافاسكريبت -->
-                </tbody>
-            </table>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <h2>خدماتنا الفاخرة</h2>
-        <div class="services-grid">
-            <div class="service-box">
-                <i class="fa-solid fa-plane"></i>
-                <h4>حجز الطيران</h4>
-                <p>حجوزات فورية ومؤكدة على أفضل خطوط الطيران العالمية والمحلية بأفضل الأسعار التنافسية.</p>
+        <!-- Live Flights & Feature 3: Flight Timetable Schedule -->
+        <section id="flights" class="card-box">
+            <div class="section-header">
+                <h3><i class="fa-solid fa-plane-departure" style="color: var(--primary-blue);"></i> جدول رحلات السودان المنتظمة والأسعار المحدثة</h3>
+                <span style="font-size: 0.85rem; color: #059669; background: #ecfdf5; padding: 5px 12px; border-radius: 20px; font-weight: 600;">
+                    <i class="fa-solid fa-circle-dot"></i> تحديث حي سنوي
+                </span>
             </div>
-            <div class="service-box">
-                <i class="fa-solid fa-kaaba"></i>
-                <h4>الحج والعمرة</h4>
-                <p>برامج متكاملة ومميزة لرحلات الحج والعمرة مع إقامة راقية وخدمات إشرافية على أعلى مستوى.</p>
+            <div class="flight-table-wrapper">
+                <table class="flight-table">
+                    <thead>
+                        <tr>
+                            <th>رقم الرحلة</th>
+                            <th>خط سير الرحلة (من ⟵ إلى)</th>
+                            <th>المواعيد الرسمية (على مدار السنة)</th>
+                            <th>الحالة</th>
+                            <th>السعر الحالي</th>
+                            <th>حجز فوري</th>
+                        </tr>
+                    </thead>
+                    <tbody id="flights-tbody">
+                        <!-- تتحدث من لوحة التحكم -->
+                    </tbody>
+                </table>
             </div>
-            <div class="service-box">
-                <i class="fa-solid fa-earth-americas"></i>
-                <h4>السياحة والسفر</h4>
-                <p>باقات سياحية عالمية مصممة خصيصاً لتناسب أهوائكم وتمنحكم تجارب استثنائية لا تُنسى.</p>
-            </div>
-            <div class="service-box">
-                <i class="fa-solid fa-headset"></i>
-                <h4>خدمة عملاء 24/7</h4>
-                <p>فريق محترف ومتخصص جاهز لخدمتكم والإجابة على استفساراتكم وتلبية طلباتكم على مدار الساعة.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Location Section -->
-    <section id="location" class="location-section">
-        <div class="location-container">
-            <h2>موقع الوكالة</h2>
-            <p>تشرفنا زيارتكم لمقرنا الرئيسي لتقديم أفضل الاستشارات وخدمات السفر الشخصية.</p>
-            <div class="location-card">
+        <!-- Feature 4: Destinations Showcase -->
+        <section id="destinations" class="card-box">
+            <div class="section-header">
+                <h3><i class="fa-solid fa-earth-americas" style="color: var(--primary-blue);"></i> الوجهات العالمية والمحلية الأكثر طلباً</h3>
+            </div>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <h4>دبي</h4>
+                    <p>رحلات يومية مؤكدة لأرقى الوجهات التجارية والسياحية.</p>
+                    <button class="book-now-btn" onclick="openBookingModal('الخرطوم ⟵ دبي', 'الرحلات اليومية', '')">استعرض الرحلات</button>
+                </div>
+                <div class="destination-card">
+                    <h4>القاهرة</h4>
+                    <p>رحلات منتظمة تلبي احتياجات السفر والسياحة والعلاج.</p>
+                    <button class="book-now-btn" onclick="openBookingModal('الخرطوم ⟵ القاهرة', 'الرحلات اليومية', '')">استعرض الرحلات</button>
+                </div>
+                <div class="destination-card">
+                    <h4>جدة</h4>
+                    <p>خدمات متكاملة للعمرة وخدمات السفر المستمر للمملكة.</p>
+                    <button class="book-now-btn" onclick="openBookingModal('الخرطوم ⟵ جدة', 'يوميادولياً', '')">استعرض الرحلات</button>
+                </div>
+                <div class="destination-card">
+                    <h4>إسطنبول</h4>
+                    <p>باقات سياحية استثنائية ورحلات أسبوعية منتظمة.</p>
+                    <button class="book-now-btn" onclick="openBookingModal('الخرطوم ⟵ إسطنبول', 'أيام الأربعاء والسبت', '')">استعرض الرحلات</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature 6: Baggage Policy & Terms -->
+        <section id="baggage" class="card-box">
+            <div class="section-header">
+                <h3><i class="fa-solid fa-suitcase-rolling" style="color: var(--primary-blue);"></i> سياسة الأمتعة والشروط وطرق الدفع</h3>
+            </div>
+            <div class="info-grid">
+                <div class="info-box">
+                    <i class="fa-solid fa-suitcase"></i>
+                    <h4>سياسة الحقائب والأمتعة</h4>
+                    <p>الوزن المسموح للحقائب المشحونة يتراوح بين 23 كجم إلى 30 كجم حسب خطوط الطيران والوجهة، بالإضافة إلى حقيبة يد مقصورة بمقاس 7 كجم مجاناً.</p>
+                </div>
+                <div class="info-box">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <h4>شروط التذاكر والتعديل</h4>
+                    <p>تتيح وكالة عزمي إمكانية تعديل أو إلغاء الحجوزات وفقاً لشروط درجة التذكرة المحجوزة، مع توفير دعم فوري لإعادة جدولة المواعيد.</p>
+                </div>
+                <div class="info-box">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <h4>طرق الدفع المعتمدة</h4>
+                    <p>يمكنكم تسديد قيمة التذاكر عبر التحويل البنكي المباشر (تطبيق بنكك - Bankak)، أو الدفع النقدي مباشرة في المقر الرئيسي للوكالة.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section id="location" class="location-box">
+            <h3>موقع الوكالة الرئيسي</h3>
+            <p>يسعدنا زيارتكم لمقرنا لتقديم أفضل الاستشارات وخدمات السفر الشخصية.</p>
+            <div class="location-address">
                 <i class="fa-solid fa-location-dot"></i>
-                <p>الخرطوم _ غرب صينية القندول</p>
+                <span>الخرطوم _ غرب صينية القندول</span>
             </div>
+        </section>
+
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/249125561790?text=مرحباً%20وكالة%20عزمي،%20أريد%20الاستفسار%20عن%20الخدمات%20والرحلات" class="whatsapp-float" target="_blank" title="تواصل عبر الواتساب">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Booking Modal Window -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeBookingModal()">&times;</button>
+            <h3 style="color: var(--dark-blue); margin-bottom: 20px;"><i class="fa-solid fa-ticket"></i> نموذج حجز تذكرة سفر</h3>
+            <form id="bookingForm" onsubmit="sendBookingToWhatsApp(event)">
+                <div class="form-group">
+                    <label>خط السير (من وإلى):</label>
+                    <input type="text" id="bRoute" required placeholder="مثال: الخرطوم إلى دبي">
+                </div>
+                <div class="form-group">
+                    <label>يوم وشهر السفر:</label>
+                    <input type="text" id="bDate" required placeholder="مثال: 25 نوفمبر">
+                </div>
+                <div class="form-group">
+                    <label>عدد الأفراد:</label>
+                    <div class="passengers-grid">
+                        <div>
+                            <label style="font-size:0.8rem">رجال</label>
+                            <input type="number" id="pMen" min="0" value="1">
+                        </div>
+                        <div>
+                            <label style="font-size:0.8rem">نساء</label>
+                            <input type="number" id="pWomen" min="0" value="0">
+                        </div>
+                        <div>
+                            <label style="font-size:0.8rem">أطفال</label>
+                            <input type="number" id="pChildren" min="0" value="0">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>رقم الجواز:</label>
+                    <input type="text" id="bPassport" required placeholder="أدخل رقم الجواز أو أرقام الجوازات">
+                </div>
+                <button type="submit" class="btn-main" style="width: 100%; margin-top: 10px;">إرسال الحجز عبر واتساب</button>
+            </form>
         </div>
-    </section>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div id="adminLoginModal" class="modal">
+        <div class="modal-content" style="max-width: 400px;">
+            <button class="close-modal" onclick="closeAdminLogin()">&times;</button>
+            <h3 style="color: var(--dark-blue); margin-bottom: 20px;"><i class="fa-solid fa-lock"></i> دخول مدير الموقع</h3>
+            <div class="form-group">
+                <label>كلمة المرور السرية:</label>
+                <input type="password" id="adminPassInput" placeholder="أدخل كلمة المرور الخاصة بك">
+            </div>
+            <button class="btn-main" style="width: 100%;" onclick="verifyAdmin()">تسجيل الدخول</button>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard Modal -->
+    <div id="adminDashboardModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeAdminDashboard()">&times;</button>
+            <h3 style="color: var(--dark-blue); margin-bottom: 15px;"><i class="fa-solid fa-gears"></i> لوحة تحكم الأسعار والرحلات</h3>
+            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 20px;">قم بتعديل الأسعار أو الحالة لتظهر فوراً لعملائك على الموقع.</p>
+            <div id="adminFlightsEditor"></div>
+            <button class="btn-main" style="width: 100%; margin-top: 15px; background: #059669;" onclick="saveAdminChanges()">حفظ التحديثات ونشرها</button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 <span>وكالة عزمي للسفر والسياحة (Azmi Travel & Tourism)</span>[span_4](start_span)[span_4](end_span)</p>
+        <p>جميع الحقوق محفوظة &copy; 2026 <span>وكالة عزمي للسفر والسياحة (Azmi Travel & Tourism)</span>[span_2](start_span)[span_2](end_span)</p>
     </footer>
 
-    <!-- JavaScript for Live Hourly Price Simulation & Dynamic Updates -->
+    <!-- JavaScript System Logic -->
     <script>
-        // محاكاة بيانات الرحلات مع تحديث الأسعار بصورة ديناميكية كل ساعة
-        const flightsData = [
-            { code: 'AZ-401', route: 'الخرطوم ⟵ دبي', time: '08:00 ص', status: 'مؤكدة', basePrice: 450000 },
-            { code: 'AZ-702', route: 'الخرطوم ⟵ القاهرة', time: '11:30 ص', status: 'في الموعد', basePrice: 380000 },
-            { code: 'AZ-905', route: 'الخرطوم ⟵ جدة', time: '03:15 م', status: 'متاحة للحجز', basePrice: 310000 },
-            { code: 'AZ-220', route: 'الخرطوم ⟵ إسطنبول', time: '07:00 م', status: 'مؤكدة', basePrice: 520000 }
+        let defaultFlights = [
+            { id: 1, code: 'AZ-401', route: 'الخرطوم ⟵ دبي', time: 'يومياً على مدار السنة', status: 'مؤكدة', price: '450,000 SDG' },
+            { id: 2, code: 'AZ-702', route: 'الخرطوم ⟵ القاهرة', time: 'يومياً على مدار السنة', status: 'في الموعد', price: '380,000 SDG' },
+            { id: 3, code: 'AZ-905', route: 'الخرطوم ⟵ جدة', time: 'مواعيد منتظمة أسبوعياً', status: 'متاحة للحجز', price: '310,000 SDG' },
+            { id: 4, code: 'AZ-220', route: 'الخرطوم ⟵ إسطنبول', time: 'أيام الأربعاء والسبت', status: 'مؤكدة', price: '520,000 SDG' }
         ];
 
-        function renderFlights() {
-            const tbody = document.getElementById('flight-table-body');
-            tbody.innerHTML = '';
-            
-            flightsData.forEach(flight => {
-                // إضافة تقلب طفيف عشوائي في السعر ليعطي شعور التحديث الحي
-                const randomVariation = Math.floor(Math.random() * 5000) - 2500;
-                const currentPrice = flight.basePrice + randomVariation;
+        let currentFlights = JSON.parse(localStorage.getItem('azmi_flights')) || defaultFlights;
 
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td><strong>${flight.code}</strong></td>
-                    <td>${flight.route}</td>
-                    <td>${flight.time}</td>
-                    <td><span style="color: var(--primary-blue); background: rgba(44,101,188,0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.85rem;">${flight.status}</span></td>
-                    <td><span class="price-tag">${currentPrice.toLocaleString()} SDG</span></td>
+        function renderFlightsTable(flightsToRender = currentFlights) {
+            const tbody = document.getElementById('flights-tbody');
+            tbody.innerHTML = '';
+            if(flightsToRender.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; color:#64748b;">لا توجد رحلات مطابقة للبحث الحالي</td></tr>`;
+                return;
+            }
+            flightsToRender.forEach(f => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><strong>${f.code}</strong></td>
+                    <td>${f.route}</td>
+                    <td>${f.time}</td>
+                    <td><span style="color: var(--primary-blue); background: rgba(44,101,188,0.1); padding: 4px 10px; border-radius: 4px; font-size: 0.85rem;">${f.status}</span></td>
+                    <td><span class="price-badge">${f.price}</span></td>
+                    <td><button class="book-now-btn" onclick="openBookingModal('${f.route}', 'الرحلة القادمة', '')">حجز</button></td>
                 `;
-                tbody.appendChild(row);
+                tbody.appendChild(tr);
             });
         }
 
-        // تشغيل التحديث عند تحميل الصفحة
-        renderFlights();
+        renderFlightsTable();
 
-        // مؤقت تنازلي وهمي للساعة القادمة
-        let totalSeconds = 3585; // 59 دقيقة و 45 ثانية
-        const countdownElement = document.getElementById('countdown');
-
-        setInterval(() => {
-            let minutes = Math.floor(totalSeconds / 60);
-            let seconds = totalSeconds % 60;
-            countdownElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            totalSeconds--;
-            
-            if (totalSeconds < 0) {
-                totalSeconds = 3600; // إعادة ضبط الساعة
-                renderFlights(); // تحديث البيانات والأسعار تلقائياً كل ساعة
+        // تصفية الرحلات عبر محرك البحث الذكي
+        function filterFlights() {
+            const selectedRoute = document.getElementById('searchRoute').value;
+            if(!selectedRoute) {
+                renderFlightsTable(currentFlights);
+                return;
             }
-        }, 1000);
+            const filtered = currentFlights.filter(f => f.route.includes(selectedRoute));
+            renderFlightsTable(filtered);
+            document.getElementById('flights').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function openBookingModal(route, date, passport) {
+            document.getElementById('bRoute').value = route !== 'رحلة عامة' ? route : '';
+            document.getElementById('bDate').value = date !== 'حسب الطلب' ? date : '';
+            document.getElementById('bookingModal').style.display = 'flex';
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+        }
+
+        function sendBookingToWhatsApp(e) {
+            e.preventDefault();
+            const route = document.getElementById('bRoute').value;
+            const date = document.getElementById('bDate').value;
+            const men = document.getElementById('pMen').value;
+            const women = document.getElementById('pWomen').value;
+            const children = document.getElementById('pChildren').value;
+            const passport = document.getElementById('bPassport').value;
+
+            const text = `مرحباً وكالة عزمي، أريد تأكيد حجز جديد:%0A` +
+                         `- خط السير: ${route}%0A` +
+                         `- التاريخ: ${date}%0A` +
+                         `- عدد الأفراد: (رجال: ${men} | نساء: ${women} | أطفال: ${children})%0A` +
+                         `- رقم الجواز: ${passport}`;
+
+            window.open(`https://wa.me/249125561790?text=${text}`, '_blank');
+            closeBookingModal();
+        }
+
+        const ADMIN_SECRET = "azmi2026";
+
+        function openAdminLogin() {
+            document.getElementById('adminLoginModal').style.display = 'flex';
+        }
+
+        function closeAdminLogin() {
+            document.getElementById('adminLoginModal').style.display = 'none';
+        }
+
+        function verifyAdmin() {
+            const pass = document.getElementById('adminPassInput').value;
+            if (pass === ADMIN_SECRET) {
+                closeAdminLogin();
+                document.getElementById('adminPassInput').value = '';
+                openAdminDashboard();
+            } else {
+                alert('كلمة المرور غير صحيحة!');
+            }
+        }
+
+        function openAdminDashboard() {
+            const editorDiv = document.getElementById('adminFlightsEditor');
+            editorDiv.innerHTML = '';
+            currentFlights.forEach((f, index) => {
+                editorDiv.innerHTML += `
+                    <div style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 10px; border: 1px solid #cbd5e1;">
+                        <div style="font-weight:bold; margin-bottom: 5px; color:var(--dark-blue);">${f.code} - ${f.route}</div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <div>
+                                <label style="font-size:0.75rem">السعر:</label>
+                                <input type="text" id="edit_price_${index}" value="${f.price}">
+                            </div>
+                            <div>
+                                <label style="font-size:0.75rem">الحالة:</label>
+                                <input type="text" id="edit_status_${index}" value="${f.status}">
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById('adminDashboardModal').style.display = 'flex';
+        }
+
+        function closeAdminDashboard() {
+            document.getElementById('adminDashboardModal').style.display = 'none';
+        }
+
+        function saveAdminChanges() {
+            currentFlights.forEach((f, index) => {
+                const newPrice = document.getElementById(`edit_price_${index}`).value;
+                const newStatus = document.getElementById(`edit_status_${index}`).value;
+                if(newPrice) f.price = newPrice;
+                if(newStatus) f.status = newStatus;
+            });
+            localStorage.setItem('azmi_flights', JSON.stringify(currentFlights));
+            renderFlightsTable();
+            closeAdminDashboard();
+            alert('تم تحديث وحفظ بيانات الرحلات والأسعار بنجاح!');
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
     </script>
 </body>
 </html>
