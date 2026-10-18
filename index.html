@@ -33,7 +33,7 @@
             line-height: 1.6;
         }
 
-        /* Header & Navbar */
+        /* Header & Navbar Fixed & Cleaned */
         header {
             background: var(--white);
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
@@ -117,10 +117,10 @@
             color: var(--white);
         }
 
-        /* Hero Section */
+        /* Hero Section Spacing Fixed */
         .hero {
             min-height: 75vh;
-            background: linear-gradient(135deg, rgba(27, 59, 111, 0.92), rgba(44, 101, 188, 0.85)), url('Azmi.jpg') center/cover no-repeat;[span_1](start_span)[span_1](end_span)
+            background: linear-gradient(135deg, rgba(27, 59, 111, 0.92), rgba(44, 101, 188, 0.85)), url('Azmi.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -295,13 +295,13 @@
         /* Destinations Showcase */
         .destinations-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
         }
 
         .destination-card {
-            height: 250px;
-            border-radius: 12px;
+            height: 240px;
+            border-radius: 10px;
             overflow: hidden;
             position: relative;
             display: flex;
@@ -309,7 +309,7 @@
             justify-content: flex-end;
             padding: 15px;
             color: var(--white);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             transition: var(--transition);
         }
 
@@ -317,7 +317,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to top, rgba(27,59,111,0.92), rgba(27,59,111,0.2));
+            background: linear-gradient(to top, rgba(27,59,111,0.95), rgba(27,59,111,0.15));
             z-index: 1;
         }
 
@@ -328,18 +328,18 @@
 
         .destination-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 10px 20px rgba(44, 101, 188, 0.3);
+            box-shadow: 0 10px 20px rgba(44, 101, 188, 0.25);
         }
 
         .destination-card h4 {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             margin-bottom: 4px;
             font-weight: 800;
         }
 
         .destination-card p {
             font-size: 0.8rem;
-            opacity: 0.95;
+            opacity: 0.9;
             margin-bottom: 10px;
         }
 
@@ -521,7 +521,7 @@
     <header>
         <div class="navbar">
             <div class="logo-container">
-                <img src="Azmi.jpg" alt="شعار وكالة عزمي">[span_2](start_span)[span_2](end_span)
+                <img src="Azmi.jpg" alt="شعار وكالة عزمي">
                 <div class="logo-text">
                     <h1>وكالة عزمي</h1>
                     <span>AZMI TRAVEL & TOURISM</span>
@@ -577,7 +577,6 @@
                         <option value="إسطنبول">إسطنبول</option>
                         <option value="الرياض">الرياض</option>
                         <option value="الدوحة">الدوحة</option>
-                        <option value="أديس أبابا">أديس أبابا</option>
                     </select>
                 </div>
                 <div class="search-field">
@@ -620,13 +619,13 @@
             </div>
         </section>
 
-        <!-- 3. Destinations Showcase with Correct Landmark Images -->
+        <!-- 3. Destinations Showcase -->
         <section id="destinations" class="card-box">
             <div class="section-header">
                 <h3><i class="fa-solid fa-earth-americas" style="color: var(--primary-blue);"></i> الوجهات العالمية والمحلية</h3>
             </div>
             <div class="destinations-grid">
-                <div class="destination-card" style="background: url('https://images.unsplash.com/photo-1572252009286-268acec5ca0a?auto=format&fit=crop&w=500&q=80') center/cover;">
+                <div class="destination-card" style="background: url('https://images.unsplash.com/photo-1541427422271-2b5df0104e76?auto=format&fit=crop&w=500&q=80') center/cover;">
                     <h4>القاهرة</h4>
                     <p>رحلات يومية منتظمة للسياحة والعلاج والأعمال.</p>
                     <button class="book-btn" onclick="openBookingModal('بورتسودان ⟵ القاهرة', 'الجدول الموسمي')">احجز الآن</button>
@@ -641,7 +640,7 @@
                     <p>خدمات متكاملة للعمرة ورحلات التواصل المستمر.</p>
                     <button class="book-btn" onclick="openBookingModal('بورتسودان ⟵ جدة', 'الجدول الموسمي')">احجز الآن</button>
                 </div>
-                <div class="destination-card" style="background: url('https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=500&q=80') center/cover;">
+                <div class="destination-card" style="background: url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=500&q=80') center/cover;">
                     <h4>إسطنبول</h4>
                     <p>باقات سياحية استثنائية ورحلات أسبوعية منتظمة.</p>
                     <button class="book-btn" onclick="openBookingModal('بورتسودان ⟵ إسطنبول', 'الجدول الموسمي')">احجز الآن</button>
@@ -650,11 +649,6 @@
                     <h4>الرياض</h4>
                     <p>خطوط طيران مباشرة تخدم قطاع الأعمال والمغتربين.</p>
                     <button class="book-btn" onclick="openBookingModal('بورتسودان ⟵ الرياض', 'الجدول الموسمي')">احجز الآن</button>
-                </div>
-                <div class="destination-card" style="background: url('https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&w=500&q=80') center/cover;">
-                    <h4>أديس أبابا</h4>
-                    <p>رحلات منتظمة لأهم المحطات الإفريقية والدولية.</p>
-                    <button class="book-btn" onclick="openBookingModal('بورتسودان ⟵ أديس أبابا', 'الجدول الموسمي')">احجز الآن</button>
                 </div>
             </div>
         </section>
@@ -789,7 +783,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 <span>وكالة عزمي للسفر والسياحة (Azmi Travel & Tourism)</span></p>
+        <p>جميع الحقوق محفوظة &copy; 2026 <span>وكالة عزمي للسفر والسياحة (Azmi Travel & Tourism)</span>[span_1](start_span)[span_1](end_span)</p>
     </footer>
 
     <!-- JavaScript System Logic -->
@@ -802,8 +796,7 @@
             { id: 5, code: 'AZ-301', route: 'بورتسودان ⟵ جدة', schedule: 'مواعيد منتظمة أسبوعياً', status: 'متاحة للحجز', price: '310,000 SDG' },
             { id: 6, code: 'AZ-401', route: 'بورتسودان ⟵ إسطنبول', schedule: 'أيام الأربعاء والسبت', status: 'مؤكدة', price: '520,000 SDG' },
             { id: 7, code: 'AZ-501', route: 'بورتسودان ⟵ الرياض', schedule: 'الإثنين والخميس أسبوعياً', status: 'مؤكدة', price: '390,000 SDG' },
-            { id: 8, code: 'AZ-601', route: 'الدوحة ⟵ بورتسودان', schedule: 'الثلاثاء والجمعة', status: 'مؤكدة', price: '460,000 SDG' },
-            { id: 9, code: 'AZ-701', route: 'بورتسودان ⟵ أديس أبابا', schedule: 'الأحد والأربعاء أسبوعياً', status: 'متاحة للحجز', price: '350,000 SDG' }
+            { id: 8, code: 'AZ-601', route: 'الدوحة ⟵ بورتسودان', schedule: 'الثلاثاء والجمعة', status: 'مؤكدة', price: '460,000 SDG' }
         ];
 
         let currentTimetable = JSON.parse(localStorage.getItem('azmi_timetable')) || defaultTimetable;
